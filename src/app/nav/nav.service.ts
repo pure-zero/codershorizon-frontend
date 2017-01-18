@@ -11,9 +11,9 @@ export class NavService {
 
   getNavPages() {
     return Observable.forkJoin(
-      this.http.get(environment.API_BASE_URL + "pages/?fields=show_in_menus&format=json&show_in_menus=True&type=home.Homepage")
+      this.http.get(environment.API_BASE_URL + "pages/?fields=title&format=json&show_in_menus=True&type=home.Homepage")
         .map((res:Response) => res.json()),
-      this.http.get(environment.API_BASE_URL + "pages/?fields=show_in_menus&format=json&show_in_menus=True&type=blog.BlogIndexPage")
+      this.http.get(environment.API_BASE_URL + "pages/?fields=title&format=json&show_in_menus=True&type=blog.BlogIndexPage")
         .map(res => res.json())
     );
   }
