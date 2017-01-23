@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
+import { BlogIndexComponent } from './blog-index/blog-index.component';
 
 const appRoutes: Routes = [
     {
-        path: 'Home/:id',
+        path: 'home.HomePage/:id',
         component: HomePageComponent
+    },
+    {
+        path: 'blog.BlogIndexPage/:id',
+        component: BlogIndexComponent
     },
     {
         path: '',
@@ -23,7 +28,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavComponent,
-    HomePageComponent
+    HomePageComponent,
+    BlogIndexComponent
   ],
   imports: [
     BrowserModule,
