@@ -1,3 +1,23 @@
-<p>
-  home-page works!
-</p>
+<div class="feature-image" [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' + cmsURL + homePage?.full_url + ')'}">
+  <div class="centre-panel">
+    <img class="main-image" src="{{cmsURL}}{{homePage?.main_image_url}}"/>
+    <div class="heading-text"><h1>{{homePage?.heading}}</h1></div>
+    <div class="social-links">
+      <a href="{{homePage?.linkedIn}}">
+        <div class="linkedin-link">
+          <p>LinkedIn</p>
+        </div>
+      </a>
+      <a href="{{homePage?.github}}">
+        <div class="github-link">
+          <p>Github</p>
+        </div>
+      </a>
+      <a href="{{homePage?.stackOverflow}}">
+        <div class="stackoverflow-link">
+          <p>Stack Overflow</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+.feature-image{
+  width:100%;
+  height:100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:fixed;
+}
+
+.linkedin-link, .github-link, .stackoverflow-link{
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 10px auto;
+  width: 250px;
+  height: 50px;
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  border-radius: 20px;
+}
+
+.linkedin-link:hover, .github-link:hover{
+  -moz-box-shadow:    inset 0 0 10px 1px #000000;
+  -webkit-box-shadow: inset 0 0 10px 1px #000000;
+  box-shadow:         inset 0 0 10px 1px #000000;
+}
+
+.stackoverflow-link:hover{
+  -moz-box-shadow:    inset 0 0 10px 1px #F48024;
+  -webkit-box-shadow: inset 0 0 10px 1px #F48024;
+  box-shadow:         inset 0 0 10px 1px #F48024;
+}
+
+.social-links a:hover{
+  text-decoration: none;
+}
+
+.linkedin-link{
+  background-color: #0077B5;
+  background-image: url("/assets/In-2CRev-128px-TM.png");
+  background-size: 20%;
+  background-position: 5% 0%;
+  color: white;
+}
+
+.github-link{
+  background-color: #24292e;
+  background-image: url("/assets/GitHub-Mark-Light-120px-plus.png");
+  background-size: 20%;
+  background-position: 5% 0%;
+  color: white;
+}
+
+.stackoverflow-link{
+  background-color: #fafafb;
+  border:  3px solid #F48024;
+  background-image: url("/assets/so-icon.svg");
+  background-size: 20%;
+  background-position: 2% 0%;
+  color: #535a60;
+}
+
+.linkedin-link p, .github-link p, .stackoverflow-link p{
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: serif;
+  text-decoration: none;
+}
+
+.linkedin-link:hover p, .github-link:hover p, .stackoverflow-link:hover p{
+  text-decoration: none;
+}
+
+.centre-panel{
+  margin: 80px auto;
+}
+
+.social-links{
+  margin-top: 30px;
+}
+.main-image{
+  display: block;
+  margin: 0px auto;
+  border-radius: 50%;
+  width:250px;
+  height: 250px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+}
+.heading-text{
+  text-align: center;
+  margin: 10px auto;
+  color: white;
+}

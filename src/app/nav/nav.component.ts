@@ -1,3 +1,8 @@
+/*
+*
+* Component to display nav pages
+*
+ */
 import { Component, OnInit } from '@angular/core';
 import { NavService } from './nav.service';
 
@@ -17,8 +22,7 @@ export class NavComponent implements OnInit {
            this.homePages = data[0].pages;
            this.blogIndexPages = data[1].pages;
          },
-         err => console.error(err),
-         () => console.log('Loaded Navigation')
+         err => console.error(err)
        );
   }
 

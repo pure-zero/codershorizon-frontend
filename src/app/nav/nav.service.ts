@@ -1,3 +1,8 @@
+/*
+*
+* Service the receive Nav pages from wagtail only gets home pages and blog index pages
+*
+ */
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {environment} from "../../environments/environment";
@@ -12,9 +17,11 @@ export class NavService {
   getNavPages() {
     return Observable.forkJoin(
       this.http.get(environment.API_BASE_URL + "pages/?fields=title&format=json&show_in_menus=True&type=home.Homepage")
-        .map((res:Response) => res.json()),
+        .map((res:Response) => res.json())
+        .share(),
       this.http.get(environment.API_BASE_URL + "pages/?fields=title&format=json&show_in_menus=True&type=blog.BlogIndexPage")
-        .map(res => res.json())
+        .map((res:Response) => res.json())
+        .share()
     );
   }
 }
