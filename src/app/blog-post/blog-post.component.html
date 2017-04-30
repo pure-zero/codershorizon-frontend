@@ -1,0 +1,13 @@
+<div class="blog-post">
+  <div class="title-banner" [ngStyle]="{'background-image':'url(' + cmsURL + blogPost?.full_url +  ')'}">
+    <div class="col-md-12 title-text">
+      <h1>{{blogPost?.title}}</h1>
+      <br/>
+      <p>{{blogPost?.date |  date : 'MMMM d, yyyy'}}</p>
+    </div>
+  </div>
+  <div class="col-md-12 blog-content">
+    <div class="col-md-12 blog-intro" [innerHTML]="blogPost?.intro"></div>
+    <div class="col-md-12 blog-body" [innerHTML]="blogPost?.body"></div>
+  </div>
+</div>

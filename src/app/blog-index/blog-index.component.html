@@ -1,3 +1,13 @@
-<p>
-  blog-index works!
-</p>
+<div class="col-md-12 blog-index-page">
+  <div>
+    <div>
+      <h1>{{blogIndex?.title}}</h1>
+    </div>
+    <div [innerHTML]="blogIndex?.intro"></div>
+  </div>
+  <div class="blog-post-holder col-md-12">
+    <div class="blog-item" *ngFor="let blog of blogIndex?.related_links">
+      <h2><a routerLink="/blog.BlogPage/{{blog.page_number}}">{{blog.title}}</a></h2>
+    </div>
+  </div>
+</div>

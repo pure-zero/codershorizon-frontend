@@ -1,0 +1,16 @@
+.blog-index-page{
+  margin-top:80px;
+}
+.blog-post-holder{
+  margin-top:50px;
+}
+.blog-item{
+  border: 2px solid grey;
+  border-left:0px;
+  border-right:0px;
+  padding: 20px 0px;
+}
+.blog-item h2{
+  margin-left:30px;
+}
+

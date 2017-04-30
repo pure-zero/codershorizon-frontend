@@ -1,24 +1,19 @@
-/*
-*
-* Component to render the Homeepage views
-*
- */
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {HomePage} from "./HomePage";
-import {environment} from "../../environments/environment";
 import {PageService} from "../page.service";
+import {BlogPost} from "./BlogPost";
+import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
+  selector: 'app-blog-post',
+  templateUrl: './blog-post.component.html',
+  styleUrls: ['./blog-post.component.css'],
   providers: [PageService]
 })
-export class HomePageComponent implements OnInit, OnDestroy{
+export class BlogPostComponent implements OnInit {
   id: number;
   private sub: any;
-  public homePage: HomePage;
+  public blogPost: BlogPost;
   public cmsURL: string;
   errorMessage: string;
   constructor(private pageService : PageService, private route: ActivatedRoute) {
@@ -31,12 +26,8 @@ export class HomePageComponent implements OnInit, OnDestroy{
     });
     this.pageService.getPage(this.id)
       .subscribe(
-        homePage => this.homePage = new HomePage(homePage),
+        blogIndex => this.blogPost = new BlogPost(blogIndex),
         error =>  this.errorMessage = <any>error
       );
   }
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
 }

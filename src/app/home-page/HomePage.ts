@@ -26,4 +26,6 @@ export class HomePage {
       this.heading = homePageObj.heading;
     }
   }
+
+
 }

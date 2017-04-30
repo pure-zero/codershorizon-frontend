@@ -1,0 +1,24 @@
+.blog-post{
+  margin-top: 55px;
+  width: 100%;
+}
+.title-banner{
+  height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.title-text{
+  padding-top: 50px;
+}
+.title-text h1, .title-text p{
+  background-color: rgba(255, 255, 255, 0.75);
+  display: inline;
+}
+.blog-content{
+  margin-top: 50px;
+}
+.blog-body{
+  margin-top:20px;
+}

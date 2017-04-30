@@ -8,6 +8,8 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BlogIndexComponent } from './blog-index/blog-index.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     {
@@ -19,9 +21,17 @@ const appRoutes: Routes = [
         component: BlogIndexComponent
     },
     {
+        path: 'blog.BlogPage/:id',
+        component: BlogPostComponent
+    },
+    {
         path: '',
         component: HomePageComponent
     },
+    {
+        path: '**',
+        component:PageNotFoundComponent
+    }
   ];
 
 @NgModule({
@@ -29,7 +39,9 @@ const appRoutes: Routes = [
     AppComponent,
     NavComponent,
     HomePageComponent,
-    BlogIndexComponent
+    BlogIndexComponent,
+    BlogPostComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,34 +1,25 @@
-/*
-*
-* Service to rendering the homepage views from the wagtail API
-*
- */
 import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
-import {HomePage} from "./HomePage";
-import {environment} from "../../environments/environment";
+import {environment} from "../environments/environment";
 
-
-//@TODO: Figure out caching
 @Injectable()
-export class HomePageService {
+export class PageService {
   id: number;
-  homePageStore: HomePage[] = [];
-  lastObservable: Observable<HomePage>;
+  pageStore: JSON[] = [];
+  lastObservable: Observable<JSON>;
   constructor(private http: Http){
   }
-  getHomePage(GUID: number): Observable<HomePage>{
+  getPage(GUID: number): Observable<JSON>{
     if(GUID) {
       return this.http
         .get(environment.API_BASE_URL + "pages/" + GUID + "/")
         .map(
           response =>{
-            this.homePageStore[GUID] = this.extractData(response);
-            console.log(this.homePageStore[GUID]);
-            return this.homePageStore[GUID];
+            this.pageStore[GUID] = this.extractData(response);
+            return this.pageStore[GUID];
 
           })
         .publishReplay(1)
@@ -44,16 +35,16 @@ export class HomePageService {
               .get(data.pages[0].meta.detail_url).publishReplay(1).refCount()
               .map(
                 response => {
-                  this.homePageStore[0] = this.extractData(response);
-                  return this.homePageStore[0];
-            })
+                  this.pageStore[0] = this.extractData(response);
+                  return this.pageStore[0];
+                })
               .catch(this.handleError);
           });
     }
   }
-  private extractData(res: Response) {
+  private extractData(res: Response) : JSON {
     let body = res.json();
-    return <HomePage>body;
+    return body;
   }
   private handleError (error: Response | any) {
     // In a real world app, we might use a remote logging infrastructure
