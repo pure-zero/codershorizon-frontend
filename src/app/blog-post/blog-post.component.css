@@ -12,7 +12,7 @@
 .title-text{
   padding-top: 50px;
 }
-.title-text h1, .title-text p, .title-text blog-intro{
+.title-text h1, .title-text p, .title-text .blog-intro{
   background-color: rgba(255, 255, 255, 0.75);
   display: inline;
 }
