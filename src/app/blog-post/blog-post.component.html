@@ -3,6 +3,7 @@
     <div class="col-md-12 title-text">
       <h1>{{blogPost?.title}}</h1>
       <br/>
+      <div class="col-md-12 blog-intro" [innerHTML]="blogPost?.intro"></div>
       <p>{{blogPost?.date |  date : 'MMMM d, yyyy'}}</p>
     </div>
   </div>
